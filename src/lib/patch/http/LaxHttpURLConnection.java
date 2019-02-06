@@ -10,15 +10,15 @@ import java.net.*;
 
 public class LaxHttpURLConnection extends sun.net.www.protocol.http.HttpURLConnection {
 
-	public LaxHttpURLConnection(URL u, String host, int port) {
+	public LaxHttpURLConnection(URL u, String host, int port) throws IOException {
 		super(u, new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved(host, port)));
     	}
 
-    	public LaxHttpURLConnection(URL u, Proxy p) {
+    	public LaxHttpURLConnection(URL u, Proxy p) throws IOException {
 		super(u, p, new Handler());
     	}
 
-    	public LaxHttpURLConnection(URL u) {
+    	public LaxHttpURLConnection(URL u) throws IOException {
 		super(u, null, new Handler());
     	}
 
